@@ -25,17 +25,18 @@ jobs:
     
     - name: Build with Maven
       run: mvn -B clean  package --file ./my-app/
-    - name: tree
+    - name : tree
       run: tree
-   # - name : build docker image
-   #   run : docker build -t asafswisa/docker-maven ./my-app/
+    - name : build docker image
+      run : docker build -t asafswisa/docker-maven ./my-app/
     - name: Login to DockerHub
-      run: docker login -u asafswisa -p dckr_pat_1mAmUADEtCKTM0wEMOhohly42oE
-    #  uses: docker/login-action@v1
-     # with:
-#	username: '${{secrets.DOCKERHUB_USERNAME}}'
-   #     password: '${{secrets.DOCKERHUB_PASSWORD}}'
-    - name: build docker image
-      run: docker build -t asafswisa/docker-maven ./my-app/
-    - name: push to docker-hub
-      run: docker push asafswisa/maven
+        uses: docker/login-action@v1
+        with:
+          username: '${{secrets.DOCKERHUB_USER}}'
+          password: '${{secrets.
+DOCKERHUB_TOKEN
+}}'
+    - name : build docker image
+      run : docker build -t asafswisa/docker-maven ./my-app/
+     - name : push to docker-hub
+       run : docker push asafswisa/maven
