@@ -39,3 +39,5 @@ jobs:
       run: docker build -t asafswisa/docker-maven ./my-app/
     - name: push to docker-hub
       run: docker push asafswisa/docker-maven
+    - name:pull from docker-hub
+    - run: docker pull asafswisa/docker-maven
