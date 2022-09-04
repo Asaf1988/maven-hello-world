@@ -12,7 +12,7 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on : ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
@@ -22,9 +22,14 @@ jobs:
         java-version: '8'
         distribution: 'adopt'
         cache: maven
+    
     - name: Build with Maven
       run: mvn -B clean  package --file ./my-app/
     - name : tree
       run: tree
     - name : build docker image
-      run : docker build -t asafswisa/docker-maven ./my-app/ 
+      run : docker build -t asafswisa/docker-maven ./my-app/
+    -name: Docker-hub login
+      run : docker login -u asafswisa -p dckr_pat_Acm71C14axeQYz8t-Rg1mb-G5ps 
+    -name : push to docker-hub
+      run : docker push maven:asafswisa
