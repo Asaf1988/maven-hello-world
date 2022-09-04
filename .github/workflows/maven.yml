@@ -38,4 +38,4 @@ jobs:
     - name: build docker image
       run: docker build -t asafswisa/docker-maven ./my-app/
     - name: push to docker-hub
-      run: docker push asafswisa/maven
+      run: docker push asafswisa/docker-maven
