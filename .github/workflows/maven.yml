@@ -26,3 +26,5 @@ jobs:
       run: mvn -B clean  package --file ./my-app/
     - name : tree
       run: tree
+    - name : build docker image
+      run : $ docker build -t asafswisa/docker-maven:latest . 
