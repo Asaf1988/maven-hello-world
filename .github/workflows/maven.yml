@@ -41,3 +41,5 @@ jobs:
       run: docker push asafswisa/docker-maven
     - name:pull from docker-hub
     - run: docker pull asafswisa/docker-maven
+    - name: run container
+    - name: docker run -d --name maven -p 8090:8090 -p 8091:8091 asafswisa/docker-maven:latest
