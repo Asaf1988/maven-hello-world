@@ -32,4 +32,4 @@ jobs:
     -name: Docker-hub login
       run : docker login -u asafswisa -p dckr_pat_Acm71C14axeQYz8t-Rg1mb-G5ps 
     -name : push to docker-hub
-      run : docker push asafswisa:maven
+      run : docker push asafswisa/maven
