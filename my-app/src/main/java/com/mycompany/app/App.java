@@ -1,7 +1,7 @@
 package com.mycompany.app;
 
 /**
- * New maggage!
+ * New maggage!!
  *
  */
 public class App 
