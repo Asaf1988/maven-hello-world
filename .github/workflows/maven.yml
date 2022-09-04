@@ -29,7 +29,12 @@ jobs:
       run: tree
     - name : build docker image
       run : docker build -t asafswisa/docker-maven ./my-app/
-    -name: Docker-hub login
-      run : docker login -u asafswisa -p dckr_pat_Acm71C14axeQYz8t-Rg1mb-G5ps 
-    -name : push to docker-hub
-      run : docker push asafswisa/maven
+    - name: Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: '${{secrets.DOCKERHUB_USER}}'
+          password: '${{secrets.DOCKERHUB_TOKEN}}'
+    - name : build docker image
+      run : docker build -t asafswisa/docker-maven ./my-app/
+     - name : push to docker-hub
+       run : docker push asafswisa/maven
