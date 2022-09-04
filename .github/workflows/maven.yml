@@ -40,6 +40,6 @@ jobs:
     - name: push to docker-hub
       run: docker push asafswisa/docker-maven
     - name:pull from docker-hub
-    - run: docker pull asafswisa/docker-maven
+      run: docker pull asafswisa/docker-maven
     - name: run container
-    - run: docker run  --name java -t asafswisa/docker-maven:latest
+      run: docker run  --name java -t asafswisa/docker-maven:latest
